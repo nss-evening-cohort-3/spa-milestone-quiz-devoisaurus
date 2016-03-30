@@ -1,0 +1,31 @@
+{
+  "cars": [
+    {
+      "make": "Subaru",
+      "model": "Impreza",
+      "year": "2014",
+      "price": "16500",
+      "color": "DarkGreen",
+      "purchased": false,
+      "description": "Fully loaded 2014 Subaru Impreza in very good condition, minor cosmetic damage."
+    },
+        {
+      "make": "Plymouth",
+      "model": "Prowler",
+      "year": "1998",
+      "price": "150000",
+      "color": "Purple",
+      "purchased": false,
+      "description": "Vintage 1998 Plymouth Prowler from limited run.  Immaculate cosmetic condition."
+    },
+        {
+      "make": "Dodge",
+      "model": "Challenger",
+      "year": "2010",
+      "price": "45000",
+      "color": "DeepPink",
+      "purchased": true,
+      "description": "Collector's item 2010 Dodge Challenger. "
+    }
+  ]
+}
