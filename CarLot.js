@@ -1,5 +1,10 @@
-var CarLot = (function () {
-  var inventory = [];
+"use strict"
+
+  let inventory = [];
+  let carCards = document.getElementsByClassName("carCard");
+
+let CarLot = (function () {
+
 
   return {
     getInventory: function () {
@@ -7,12 +12,13 @@ var CarLot = (function () {
 
     },
     loadInventory: function () {
-      var inventoryLoader = new XMLHttpRequest();
+      let inventoryLoader = new XMLHttpRequest();
 
 
       inventoryLoader.addEventListener("load", function () {
         inventory = JSON.parse(this.responseText).cars;
         CarLot.displayCars(inventory);
+        CarLot.activateEvents(carCards);
       });
 
       inventoryLoader.open("GET", "inventory.JSON")
@@ -21,6 +27,6 @@ var CarLot = (function () {
   };
 
 })();
-CarLot.loadInventory();
-// console.log("displayCars", CarLot.displayCars);
+// CarLot.loadInventory();
+
 
