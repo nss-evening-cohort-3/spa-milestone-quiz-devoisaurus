@@ -10,7 +10,7 @@
             seeTheCars += `<div class="carCard col-xs-4">
             <p>${currentCar.year} ${currentCar.make} ${currentCar.model}</p>
             <p>Price: ${currentCar.price}</p> Color:  ${currentCar.color} 
-            <p>${currentCar.purchased}</p>
+            <p>Availability: ${currentCar.purchased}</p>
             <p class="oldCopy">Description: ${currentCar.description}</p>
             </div></div>`
 
@@ -23,7 +23,7 @@
 					console.log("howdy!");
 					let clickTarget = e.target.closest("div");
 					console.log("clickTarget", clickTarget);
-                    selectCopy(e);
+                    selectCopy(e);  
 				})
 			}
 
@@ -36,7 +36,8 @@
             var replaceCopy;
 
             function selectCopy (event) {
-                replaceCopy = event.target.closest(".carCard").childNodes[i].childNodes[0];
+                replaceCopy = event.target.closest(".carCard").childNodes[6].nextElementSibling;
+                copyEntry.value="";
                 copyEntry.focus();
                 console.log("replaceCopy", replaceCopy);
                 console.log("copyEntry", copyEntry);

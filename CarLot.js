@@ -17,6 +17,14 @@ let CarLot = (function () {
 
       inventoryLoader.addEventListener("load", function () {
         inventory = JSON.parse(this.responseText).cars;
+        inventory.forEach(function(car){
+          if (car.purchased === true) {
+            car.purchased = "SOLD"
+          }
+          else {
+            car.purchased = "Still available"
+          };
+        })
         CarLot.displayCars(inventory);
         CarLot.activateEvents(carCards);
       });
