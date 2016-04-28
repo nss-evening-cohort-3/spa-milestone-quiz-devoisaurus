@@ -1,17 +1,4 @@
 
-.carCard:nth-child(1) {
-	border: 1px solid darkgreen;
-}
-
-.carCard:nth-child(2) {
-	border: 1px solid purple;
-}
-
-.carCard:nth-child(3) {
-	border: 1px solid deeppink;
-}
-
-
 h1 {
 	text-align: center;
 }
