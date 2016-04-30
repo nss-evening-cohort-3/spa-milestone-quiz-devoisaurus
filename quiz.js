@@ -1,6 +1,6 @@
 "use strict"
 
-    CarLot = (function(oldCarLot){
+    var CarLot = (function(oldCarLot){
 
     oldCarLot.displayCars = function(inventory){
         var inCars = document.getElementById("container-fluid");
@@ -10,7 +10,7 @@
             var currentBorder = `"border: 2px solid ${currentCar.color}"`;
             seeTheCars += `<div class="carCard col-xs-4" style=${currentBorder}>
             <p>${currentCar.year} ${currentCar.make} ${currentCar.model}</p>
-            <p>Price: ${currentCar.price}</p> Color:  ${currentCar.color} 
+            <p>Price: ${currentCar.price}</p> <p>Color:  ${currentCar.color}</p>
             <p>Availability: ${currentCar.purchased}</p>
             <p class="oldCopy">Description: ${currentCar.description}</p>
             </div>`
@@ -18,24 +18,26 @@
             inCars.innerHTML = seeTheCars;
         };
 
-                oldCarLot.activateEvents = function (carCards) {
-            for (var i = 0; i < carCards.length; i++) {
-                carCards[i].addEventListener("click", function(e){
-                    let clickTarget = e.target.closest("div");
-                    console.log("target", e.target.closest("div"));
-                    selectCopy(e);  
+        CarLot.activateEvents();
 
-                })
-            }
+            //     oldCarLot.activateEvents = function (carCards) {
+            // for (var i = 0; i < carCards.length; i++) {
+            //     carCards[i].addEventListener("click", function(e){
+            //         let clickTarget = e.target.closest("div");
+            //         console.log("target", e.target.closest("div"));
+            //         selectCopy(e);
+
+            //     })
+            // }
 
             var copyEntry = document.getElementById("copyChange");
-            var newCopy = document.getElementsByClassName("oldcopy");
+            var newCopy = document.getElementsByClassName("oldCopy");
             var originalCard = document.getElementsByClassName("carCard");
             var replaceCopy;
 
 
-            function selectCopy (event) {
-                replaceCopy = event.target.lastElementChild;
+            oldCarLot.selectCopy = function(event) {
+                replaceCopy = event.currentTarget.lastElementChild;
                 console.log("replaceCopy", replaceCopy);
                 copyEntry.value="";
                 copyEntry.focus();
@@ -64,10 +66,9 @@
 
         };
 
-  // Loop over the inventory and populate the page 
-
-}
     return oldCarLot;
-}(CarLot));
+  // Loop over the inventory and populate the page
+
+})(CarLot || {});
 
 CarLot.loadInventory(CarLot.displayCars);

@@ -1,9 +1,9 @@
 "use strict"
 
-  let inventory = [];
-  let carCards = document.getElementsByClassName("carCard");
+  // let carCards = document.getElementsByClassName("carCard");
 
-let CarLot = (function () {
+var CarLot = (function () {
+  let inventory = [];
 
 
   return {
@@ -11,7 +11,7 @@ let CarLot = (function () {
       return inventory;
 
     },
-    loadInventory: function () {
+    loadInventory: function (displayCars) {
       let inventoryLoader = new XMLHttpRequest();
 
 
@@ -25,8 +25,7 @@ let CarLot = (function () {
             car.purchased = "Still available"
           };
         })
-        CarLot.displayCars(inventory);
-        CarLot.activateEvents(carCards);
+        displayCars(inventory);
       });
 
       inventoryLoader.open("GET", "inventory.JSON")
@@ -35,6 +34,6 @@ let CarLot = (function () {
   };
 
 })();
-// CarLot.loadInventory();
+
 
 
