@@ -50,18 +50,11 @@
                 replaceCopy.innerHTML = copyEntry.value;
             }
 
-            function changeCard (event) {
-                var parkedCar = document.getElementsByClassName("carCard");
-                for (var i = 0; i < parkedCar.length; i++) {
-                    parkedCar[i].style.borderWidth = "2px";
-                    parkedCar[i].style.background = "white";
-                };
-                event.target.closest(".carCard").style.borderWidth = "thick";
-                event.target.closest(".carCard").style.background = "thistle";
-            }
 
             for (var i = 0; i < originalCard.length; i++) {
-                originalCard[i].addEventListener("click", changeCard);
+                originalCard[i].addEventListener("click", function(e){
+                    CarLot.changeCard(e);
+                });
             };
 
         };
