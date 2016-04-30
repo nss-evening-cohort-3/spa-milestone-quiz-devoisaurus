@@ -1,31 +1,31 @@
 {
   "cars": [
     {
-      "make": "Subaru",
-      "model": "Impreza",
-      "year": "2014",
-      "price": "$16,500",
-      "color": "DarkGreen",
+      "make": "Yugo",
+      "model": "GV",
+      "year": "1985",
+      "price": "$12",
+      "color": "tan",
       "purchased": false,
-      "description": "Fully loaded 2014 Subaru Impreza in very good condition, minor cosmetic damage."
+      "description": "Comes equipped with carpet, and rear window defroster."
     },
         {
-      "make": "Plymouth",
-      "model": "Prowler",
-      "year": "1998",
-      "price": "$150,000",
-      "color": "Purple",
+      "make": "Ford",
+      "model": "Pinto",
+      "year": "1971",
+      "price": "$300",
+      "color": "brown",
       "purchased": false,
-      "description": "Vintage 1998 Plymouth Prowler from limited run.  Immaculate cosmetic condition."
+      "description": "Might explode. Dealer not liable for damages."
     },
         {
-      "make": "Dodge",
-      "model": "Challenger",
-      "year": "2010",
-      "price": "$45,000",
-      "color": "DeepPink",
+      "make": "Chevrolet",
+      "model": "Corvair",
+      "year": "1961",
+      "price": "$4500",
+      "color": "red",
       "purchased": true,
-      "description": "Collector's item 2010 Dodge Challenger. "
+      "description": "Unsafe at any speed!"
     }
   ]
 }

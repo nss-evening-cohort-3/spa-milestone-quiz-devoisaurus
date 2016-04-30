@@ -3,11 +3,12 @@
 	CarLot = (function(oldCarLot){
 
     oldCarLot.displayCars = function(inventory){
-        var inCars = document.getElementsByClassName("row")[0];
+        var inCars = document.getElementById("container-fluid");
         var seeTheCars="";
         for (var i = 0; i < inventory.length; i++) {
             var currentCar = inventory[i];
-            seeTheCars += `<div class="carCard col-xs-4">
+            var currentBorder = `"border: 2px solid ${currentCar.color}"`;
+            seeTheCars += `<div class="carCard col-xs-4" style=${currentBorder}>
             <p>${currentCar.year} ${currentCar.make} ${currentCar.model}</p>
             <p>Price: ${currentCar.price}</p> Color:  ${currentCar.color} 
             <p>Availability: ${currentCar.purchased}</p>
@@ -33,7 +34,7 @@
 
 
             function selectCopy (event) {
-                replaceCopy = event.target.closest(".carCard").childNodes[6].nextElementSibling;
+                replaceCopy = event.target.closest(".oldCopy");
                 copyEntry.value="";
                 copyEntry.focus();
                 var myCopy = copyEntry.addEventListener("keyup", changeCopy);
@@ -45,8 +46,13 @@
             }
 
             function changeCard (event) {
+                var parkedCar = document.getElementsByClassName("carCard");
+                for (var i = 0; i < parkedCar.length; i++) {
+                    parkedCar[i].style.borderWidth = "2px";
+                    parkedCar[i].style.background = "white";
+                };
                 event.target.closest(".carCard").style.borderWidth = "thick";
-                event.target.closest(".carCard").style.background = "pink";
+                event.target.closest(".carCard").style.background = "thistle";
             }
 
             for (var i = 0; i < originalCard.length; i++) {
