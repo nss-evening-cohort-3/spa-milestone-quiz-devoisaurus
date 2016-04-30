@@ -1,6 +1,6 @@
 "use strict"
 
-	CarLot = (function(oldCarLot){
+    CarLot = (function(oldCarLot){
 
     oldCarLot.displayCars = function(inventory){
         var inCars = document.getElementById("container-fluid");
@@ -13,19 +13,20 @@
             <p>Price: ${currentCar.price}</p> Color:  ${currentCar.color} 
             <p>Availability: ${currentCar.purchased}</p>
             <p class="oldCopy">Description: ${currentCar.description}</p>
-            </div></div>`
+            </div>`
 
             inCars.innerHTML = seeTheCars;
         };
 
-        		oldCarLot.activateEvents = function (carCards) {
-			for (var i = 0; i < carCards.length; i++) {
-				carCards[i].addEventListener("click", function(e){
-					let clickTarget = e.target.closest("div");
+                oldCarLot.activateEvents = function (carCards) {
+            for (var i = 0; i < carCards.length; i++) {
+                carCards[i].addEventListener("click", function(e){
+                    let clickTarget = e.target.closest("div");
+                    console.log("target", e.target.closest("div"));
                     selectCopy(e);  
 
-				})
-			}
+                })
+            }
 
             var copyEntry = document.getElementById("copyChange");
             var newCopy = document.getElementsByClassName("oldcopy");
@@ -34,10 +35,12 @@
 
 
             function selectCopy (event) {
-                replaceCopy = event.target.closest(".oldCopy");
+                replaceCopy = event.target.lastElementChild;
+                console.log("replaceCopy", replaceCopy);
                 copyEntry.value="";
                 copyEntry.focus();
-                var myCopy = copyEntry.addEventListener("keyup", changeCopy);
+                copyEntry.addEventListener("keyup", changeCopy);
+
 
             };
 
@@ -59,7 +62,7 @@
                 originalCard[i].addEventListener("click", changeCard);
             };
 
-		};
+        };
 
   // Loop over the inventory and populate the page 
 
