@@ -8,7 +8,13 @@
         for (var i = 0; i < inventory.length; i++) {
             var currentCar = inventory[i];
             var currentBorder = `"border: 2px solid ${currentCar.color}"`;
-            seeTheCars += `<div class="carCard col-xs-4" style=${currentBorder}>
+            if ([i] % 3 === 0){
+                seeTheCars += "</div><div class = \"row\">";
+            }
+            else if (([i]-3) % 3 === 0){
+                seeTheCars += "</div>";
+            }
+            seeTheCars += `<div class="carCard col-sm-4" style=${currentBorder}>
             <p>${currentCar.year} ${currentCar.make} ${currentCar.model}</p>
             <p>Price: ${currentCar.price}</p> <p>Color:  ${currentCar.color}</p>
             <p>Availability: ${currentCar.purchased}</p>
@@ -20,15 +26,6 @@
 
         CarLot.activateEvents();
 
-            //     oldCarLot.activateEvents = function (carCards) {
-            // for (var i = 0; i < carCards.length; i++) {
-            //     carCards[i].addEventListener("click", function(e){
-            //         let clickTarget = e.target.closest("div");
-            //         console.log("target", e.target.closest("div"));
-            //         selectCopy(e);
-
-            //     })
-            // }
 
             var copyEntry = document.getElementById("copyChange");
             var newCopy = document.getElementsByClassName("oldCopy");
@@ -38,7 +35,6 @@
 
             oldCarLot.selectCopy = function(event) {
                 replaceCopy = event.currentTarget.lastElementChild;
-                console.log("replaceCopy", replaceCopy);
                 copyEntry.value="";
                 copyEntry.focus();
                 copyEntry.addEventListener("keyup", changeCopy);

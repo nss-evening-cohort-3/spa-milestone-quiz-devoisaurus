@@ -26,6 +26,33 @@
       "color": "red",
       "purchased": true,
       "description": "Unsafe at any speed!"
+    },
+    {
+      "make": "Yugo",
+      "model": "GV",
+      "year": "1985",
+      "price": "$12",
+      "color": "tan",
+      "purchased": false,
+      "description": "Comes equipped with carpet, and rear window defroster."
+    },
+        {
+      "make": "Ford",
+      "model": "Pinto",
+      "year": "1971",
+      "price": "$300",
+      "color": "brown",
+      "purchased": false,
+      "description": "Might explode. Dealer not liable for damages."
+    },
+        {
+      "make": "Chevrolet",
+      "model": "Corvair",
+      "year": "1961",
+      "price": "$4500",
+      "color": "red",
+      "purchased": true,
+      "description": "Unsafe at any speed!"
     }
   ]
 }
